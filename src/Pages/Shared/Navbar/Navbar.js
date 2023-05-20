@@ -1,10 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const menuItems = <ReactFragment>
-    <li><a>Item 1</a> </li>
+  const menuItems = <React.Fragment>
+    <li><Link to="/">Home</Link></li>
+    <li><Link to="/">Appointment</Link></li>
+    <li><Link to="/">Reviews</Link></li>
+    <li><Link to="/">Contact</Link></li>
+    <li><Link to="/">Login</Link></li>
 
-  </ReactFragment>
+  </React.Fragment>
   return (
     <div>
       <div className="navbar">
@@ -30,29 +35,17 @@ const Navbar = () => {
               tabIndex={0}
               className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
-              <li>
-                <a>Item 1</a>
-              </li>
-              <li>
-                <a>Item 3</a>
-              </li>
+             {menuItems}
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+          <Link className="btn btn-ghost normal-case text-xl">Doctors Portal</Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-            <li>
-              <a>Item 1</a>
-            </li>
-            <li>
-              <a>Item 3</a>
-            </li>
+            {menuItems}
           </ul>
         </div>
-        <div className="navbar-end">
-          <a className="btn">Get started</a>
-        </div>
+    
       </div>
     </div>
   );
